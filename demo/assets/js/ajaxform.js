@@ -1,3 +1,15 @@
+/*
+* Creates a website contact form that submits the form
+* data using AJAX using jQuery and a simple PHP mailer 
+** PACKAGE: asyncphp
+** AUTHOR: Chris Bodewell <chrislynk@gmail.com>
+** VERSION: 1.0 20151120 
+** TODO: 
+*** Add input chcecks
+*** Make into a jQuery plugin
+*** Create the form in an empty div by default
+*** Handle other all fields on an existing form
+*/
 $(function() {
 
 	// Get the form.
@@ -20,8 +32,9 @@ $(function() {
 			url: $(form).attr('action'),
 			data: formData
 		})
-		.done(function(response) {
+		.success(function(response) {
 			// Make sure that the formMessages div has the 'success' class.
+
 			$(formMessages).removeClass('error');
 			$(formMessages).addClass('success');
 
@@ -31,7 +44,10 @@ $(function() {
 			// Clear the form.
 			$('#name').val('');
 			$('#email').val('');
+			$('#subject').val('');
 			$('#message').val('');
+			
+			$('[type="reset"]').click();
 		})
 		.fail(function(data) {
 			// Make sure that the formMessages div has the 'error' class.

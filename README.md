@@ -8,8 +8,30 @@ The included demo creates a website contact form that submits the form data usin
 # The Demo
 
 This simple demo has the following structure
+	
 	\assets\css\contactform.css
+	
 	\assets\js\ajaxform.js
+	
 	\assets\js\jquery.min.js
+	
 	\assets\php\mailer.php
+	
 	\form.html
+	
+# Soon To Come
+
+   #mailer.php:
+   
+		Add handle all post items - into body
+   
+   #ajaxform.js:
+   
+		Add input chcecks
+		
+		Make into a jQuery plugin
+		
+		Create the form in an empty div by default
+		
+		Handle other all fields on an existing form
+   
